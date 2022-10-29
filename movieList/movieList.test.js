@@ -17,3 +17,12 @@ test ('Add movie', async () =>{
     expect (await movie.isDisplayed()).toBeTruthy;
     await driver.sleep(3000)
 })
+
+test ('Delete movie', async () => {
+    let addField = await driver.findElement(By.xpath('//input'))
+    await addField.sendKeys('Halloween Ends\n')
+    const deleteBtn = await driver.findElement (By.xpath('//li/button')).click()
+    const movie = await driver.findElement(By.xpath('//li/span[text()="Halloween Ends"]'))
+    expect (await movie.isDisplayed()).toBeFalsy;
+    await driver.sleep(3000)
+})
