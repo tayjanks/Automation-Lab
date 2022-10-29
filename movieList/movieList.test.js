@@ -22,9 +22,9 @@ test ('Delete movie', async () => {
     let addField = await driver.findElement(By.xpath('//input'))
     await addField.sendKeys('Scream\n')
     const deleteBtn = await driver.findElement (By.id("Scream")).click()
-    const movies = await driver.findElement(By.xpath('//li'))
-    expect (await movies = 'Scream'.toBeFalsy);
+    const movies = await driver.findElement(By.xpath('//li/span[text()]'))
     console.log(movies)
+    //expect (await movies.toBe('Scream'.toBeFalsy))
     await driver.sleep(3000)
 })
 
@@ -32,5 +32,6 @@ test ('Cross off movie', async () => {
     let addField = await driver.findElement(By.xpath('//input'))
     await addField.sendKeys('Scary Movie 2\n')
     const movie = await driver.findElement(By.xpath('//li/span[text()="Scary Movie 2"]')).click()
+
     await driver.sleep(3000)
 })
