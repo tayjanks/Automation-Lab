@@ -1,5 +1,5 @@
 // Lines 2 through 6 are our boilerplate lines of code, we need them for our tests to work
-const {Builder, Capabilities} = require('selenium-webdriver')
+const {Builder, Capabilities, By} = require('selenium-webdriver')
 
 require('chromedriver')
 
